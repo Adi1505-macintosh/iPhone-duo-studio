@@ -373,7 +373,7 @@
     viewList(style, color, finishId).forEach(function(v){ load(src(key(style, color, finishId, v))); });
   }
   function cleanName(){ return (state.name || '').replace(/\s+/g,' ').trim(); }
-  function headline(){ var n = cleanName(); return n ? n + ' is getting' : 'I’m getting'; }
+  function headline(){ var n = cleanName(); return n ? n + ' 's' : 'I’m getting'; }
   function productLine(){ return 'iPhone Duo in ' + finish().name; }
 
   /* ---------- stage ---------- */
