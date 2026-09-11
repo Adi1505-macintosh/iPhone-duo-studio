@@ -441,7 +441,10 @@
     var p = STYLES[style].prefix;
     return p === 'duo' ? 'duo_' + finishId + '_' + view : p + '_' + color + '_' + finishId + '_' + view;
   }
-  function src(k){ return 'img/' + k + '.webp'; }
+  function src(k){
+  if (k === 'duo_night-sky_inner') return 'img/duo_night-sky_alarm.webp';
+  return 'img/' + k + '.webp';
+}
   function load(u){
     if (imgCache[u]) return imgCache[u];
     imgCache[u] = new Promise(function(res, rej){ var i = new Image(); i.onload = function(){ res(i); }; i.onerror = rej; i.src = u; });
