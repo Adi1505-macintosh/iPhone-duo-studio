@@ -8,7 +8,9 @@ Configure Apple's foldable — finish, official case, colour, angle — and take
 
 ## What it does
 
-Pick a **Star White** or **Night Sky** iPhone Duo. Leave it bare, or dress it in the **iPhone Duo Case** (Sand, Navy Blue) or the **iPhone Duo Folio with Kickstand** (Taupe, Navy Blue). Flip through every angle Apple photographed of that build — open, closed, back, kickstand — and open or close the Duo with one tap.
+Pick a **Star White** or **Night Sky** iPhone Duo. Leave it bare, or dress it in the **iPhone Duo Case** (Sand, Navy Blue) or the **iPhone Duo Folio with Kickstand** (Taupe, Navy Blue). Open and close it on the stage, and the card gathers every angle Apple photographed of that build — back, front, kickstand, and for the bare Duo the postures it holds: book, laptop, tent, portrait, landscape.
+
+Flip on **Nerd mode** and the studio swaps in the shots that explain why the thing is interesting rather than what it looks like — a page of *The Odyssey* on the nano‑texture inner display, Apple Pencil markup in Notes, Messages typed in laptop posture on a café table.
 
 When you like what you see, the studio draws a 3:4 card of your build, tinted to your case colour, and hands it to you as a PNG you can post.
 
@@ -20,7 +22,9 @@ This is the part that took the longest, and it's the part worth knowing about.
 
 Apple doesn't photograph every case colour on every finish. Sand was shot on Star White; Navy on Night Sky. Filling the gaps would have meant recolouring pixels — swapping a white camera island for a dark one and calling it a product shot.
 
-The studio doesn't do that. **Every image here is an unmodified Apple Store photograph.** The consequence is that some builds have more angles than others, so the interface tells you plainly — "4 Apple photos of this exact build" — and the share card reflows to suit. A build with one real photo gets one large frame rather than three repeats and a fabrication.
+The studio doesn't do that. **Every image here is unmodified Apple photography** — Apple Store shots, the marketing product viewer, and press stills. Nothing is recoloured, and the only edits are resizing and the occasional crop.
+
+The consequence is that some builds have more angles than others. Rather than announce that, the studio just quietly shows what exists: the stage shows the strongest shot of your build, and the card's layout reflows to however many photographs the build actually has. A build with one real photo gets one large frame rather than three repeats and a fabrication.
 
 <br>
 
@@ -38,10 +42,10 @@ One HTML file. No build step, no framework, no bundler, no dependencies, no anal
 
 ```
 index.html      the entire page — markup, styles and logic
-img/            26 product photographs (WebP) plus thumbnails
+img/            35 product photographs (WebP) plus thumbnails
 ```
 
-The share card is drawn on a `<canvas>` at 1536 × 2048. Each photo carries a pre-measured bounding box so tiles frame the product rather than the studio backdrop, whatever shape the shot is.
+The share card is drawn on a `<canvas>` at 1536 × 2048. Each studio photo carries a pre-measured bounding box so tiles frame the product rather than the white backdrop, whatever shape the shot is, and the widest shot is placed in the wide tile. Photographs that arrive on their own backdrop — black, grey, a café table — get the tile filled with that backdrop colour and are shown whole, never cropped to fit. The layout reflows to however many real photos the current build has — one, two, three or four.
 
 ### Running it locally
 
