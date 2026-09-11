@@ -12,7 +12,7 @@
 <meta name="twitter:title" content="iPhone Duo Case Studio">
 <meta name="twitter:description" content="Build your iPhone Duo — finish, official Case or Folio, your name — and download a share card.">
 <title>iPhone Duo Case Studio</title>
-<meta name="description" content="Build the official iPhone Duo Case or Folio in your color, add your name, and download a share card.">
+<meta name="description" content="Build the official iPhone Duo Case or Folio in your colour and download a share card.">
 <style>
   :root{
     --bg:#ffffff;
@@ -61,6 +61,10 @@
   .brand{font-weight:600;font-size:19px;letter-spacing:-.02em;color:var(--ink);display:flex;align-items:center;gap:10px}
   .brand small{font-weight:500;color:var(--ink-3);font-size:13px;letter-spacing:0}
   .nav .cta{padding:6px 14px;font-size:13px}
+  .nav-links{margin-left:auto;margin-right:18px}
+  .nav-links a{color:var(--ink);font-size:14px;opacity:.85}
+  .nav-links a:hover{opacity:1;text-decoration:none}
+  @media (max-width:520px){.nav-links{display:none}}
 
   .head{padding-block:64px 36px;text-align:center}
   .head .eyebrow{margin-bottom:12px}
@@ -106,10 +110,6 @@
   .views button{padding:8px 14px;border-radius:999px;background:#fff;border:1.5px solid var(--line);font-size:14px;font-weight:500;transition:border-color .2s,background .2s,color .2s}
   .views button:hover{border-color:var(--ink-3)}
   .views button[aria-pressed="true"]{background:var(--ink);border-color:var(--ink);color:#fff}
-  .name-wrap{position:relative}
-  .name-wrap input{width:100%;background:#fff;border:1.5px solid var(--line);border-radius:var(--radius-m);padding:14px 16px;font-size:17px;transition:border-color .2s,box-shadow .2s}
-  .name-wrap input:focus{border-color:var(--accent);box-shadow:0 0 0 1px var(--accent) inset;outline:none}
-  .name-wrap input::placeholder{color:var(--ink-3)}
   .hint{font-size:13px;color:var(--ink-3)}
 
   .summary{background:#fff;border-radius:var(--radius-l);padding:22px 22px 24px;display:flex;flex-direction:column;gap:14px}
@@ -143,6 +143,29 @@
   .pill.social{background:var(--ink);color:#fff}
   .pill.social:hover{background:#000}
   .pill.social svg{width:16px;height:16px}
+  /* stories */
+  .reads{padding-block:76px 84px;border-top:1px solid var(--line)}
+  .reads-head{max-width:640px;margin-bottom:34px}
+  .reads-head .eyebrow{margin-bottom:12px}
+  .reads-head h2{margin-bottom:14px}
+  .reads-head p{font-size:18px;line-height:1.45;color:var(--ink-2);max-width:56ch}
+  .stories{display:grid;grid-template-columns:1fr 1fr;gap:18px}
+  .story{display:flex;flex-direction:column;gap:10px;background:#fff;border:1px solid var(--line);border-radius:var(--radius-l);padding:26px 28px 24px;color:var(--ink);transition:border-color .2s var(--ease),transform .3s var(--ease-out),box-shadow .3s var(--ease)}
+  .story:hover{text-decoration:none;border-color:var(--ink-3);transform:translateY(-3px);box-shadow:0 12px 30px rgba(0,0,0,.07)}
+  .story h3{font-size:21px;line-height:1.22;font-weight:600;letter-spacing:-.015em}
+  .story .dek{font-size:15px;line-height:1.45;color:var(--ink-2);flex:1}
+  .story .meta{font-size:13px;color:var(--ink-3);margin-top:4px}
+  .story .meta b{font-weight:500;color:var(--ink-2)}
+  .story .go{display:inline-flex;align-items:center;gap:6px;font-size:15px;font-weight:500;color:var(--accent);margin-top:2px}
+  .story .go svg{width:14px;height:14px;transition:transform .3s var(--ease-out)}
+  .story:hover .go svg{transform:translateX(3px)}
+  .author{display:flex;align-items:center;gap:20px;flex-wrap:wrap;margin-top:20px;padding:22px 26px;background:#fff;border:1px solid var(--line);border-radius:var(--radius-l)}
+  .author .who{flex:1 1 320px;min-width:0}
+  .author .who b{display:block;font-size:17px;font-weight:600;letter-spacing:-.01em}
+  .author .who span{display:block;font-size:14px;line-height:1.45;color:var(--ink-2);margin-top:3px}
+  .author .pill{flex:0 0 auto}
+  @media (max-width:760px){.stories{grid-template-columns:1fr}}
+
   footer{padding-block:34px 44px;font-size:12px;color:var(--ink-3);line-height:1.5}
   footer p{max-width:90ch}
   footer p + p{margin-top:8px}
@@ -154,6 +177,7 @@
 <header class="nav">
   <div class="wrap">
     <a class="brand" href="#top" aria-label="iPhone Duo Case Studio home">iPhone Duo <small>Case Studio</small></a>
+    <span class="nav-links"><a href="#stories">Stories</a></span>
     <a class="pill cta" href="#card">Your card</a>
   </div>
 </header>
@@ -161,8 +185,8 @@
 <main id="top">
   <div class="wrap head">
     <p class="eyebrow">Case Studio</p>
-    <h1>Snap it on. Sign it. Share it.</h1>
-    <p class="lede">Pick your iPhone Duo finish, then go bare or add an official case in your colour. Every angle is Apple’s own photography of that exact build. Add your name and download your card.</p>
+    <h1>Snap it on. Share it.</h1>
+    <p class="lede">Pick your iPhone Duo finish, then go bare or add an official case in your colour. Every angle is Apple’s own photography of that exact build. Then download your card and share it.</p>
   </div>
 
   <section class="studio" id="studio">
@@ -206,12 +230,6 @@
             <div class="views" id="views"></div>
           </div>
 
-          <div class="field">
-            <label class="field-label" for="nameInput"><span>Your name</span><em id="nameEcho">I'm getting</em></label>
-            <div class="name-wrap"><input id="nameInput" type="text" maxlength="24" autocomplete="given-name" placeholder="Add your name" spellcheck="false"></div>
-            <p class="hint">Goes on your card as “<span id="nameHint">Your name</span>'s <span id="productHint">iPhone Duo</span>”.</p>
-          </div>
-
           <div class="summary">
             <div class="row"><b id="sumName">iPhone Duo Case — Sand</b></div>
             <ul id="sumFeatures"></ul>
@@ -234,7 +252,7 @@
         </div>
         <div class="card-copy">
           <p class="eyebrow">Your card</p>
-          <h2 id="cardTitle">I'm getting iPhone Duo Case</h2>
+          <h2 id="cardTitle">I’m getting iPhone Duo in Star White</h2>
           <p class="lede">A 3:4 card tinted to your case colour — or your Duo finish, if you go without one — built only from Apple’s own photos of this exact configuration. It updates as you change anything above.</p>
           <div class="actions">
             <button type="button" class="pill" id="downloadBtn">
@@ -261,9 +279,39 @@
                 Share to Threads
               </a>
             </div>
-            <p class="hint" id="shareHint">Share card sends the image itself. The X and Threads buttons save the card and open a post with the caption ready — attach the saved image before you post.</p>
+            <p class="hint" id="shareHint">Share card hands the image straight to the X or Threads app. On desktop, X and Threads only accept text through a link, so those buttons open the post with the caption ready and copy the card to your clipboard — paste it into the composer to attach it. If the post doesn’t open, allow pop‑ups for this site.</p>
           </div>
         </div>
+      </div>
+    </div>
+  </section>
+  <section class="reads" id="stories">
+    <div class="wrap">
+      <div class="reads-head">
+        <p class="eyebrow">From the author</p>
+        <h2>Why I’m this invested in a folding iPhone.</h2>
+        <p>I’m Aditya. I write about Apple gear and how it actually fits into a day — and I’ve spent a lot of the last year thinking about foldables. These two stories are where this studio came from.</p>
+      </div>
+      <div class="stories">
+        <a class="story" href="https://medium.com/macoclock/apple-finally-made-a-device-for-nerds-like-me-7-reasons-the-iphone-duo-won-me-over-3a91500ec238?sk=a66b448052c4b790431d21fa706fbca1" target="_blank" rel="noopener">
+          <h3>Apple Finally Made A Device for Nerds Like Me — 7 Reasons The iPhone Duo Won Me Over</h3>
+          <p class="dek">An e‑reader, a notepad with Pencil support, a multitasking iPad — these are not three different devices. Not any more.</p>
+          <p class="meta"><b>Mac O’Clock</b> · 10 September 2026 · 12 min read</p>
+          <span class="go">Read the story <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M2 8h12M9 3l5 5-5 5"/></svg></span>
+        </a>
+        <a class="story" href="https://adityadarekar.medium.com/one-week-with-the-fold-8-has-me-excited-for-the-iphone-fold-33268c21622f?sk=dd1f6eb9d0bde7fa7abcad0ff9b83bc8" target="_blank" rel="noopener">
+          <h3>One Week With The Fold 8 Has Me Excited For The iPhone Fold</h3>
+          <p class="dek">Living with Samsung’s wider 4:3 fold for a week — and watching it quietly replace my iPad mini.</p>
+          <p class="meta"><b>Medium</b> · 13 August 2026 · 12 min read</p>
+          <span class="go">Read the story <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M2 8h12M9 3l5 5-5 5"/></svg></span>
+        </a>
+      </div>
+      <div class="author">
+        <div class="who">
+          <b>Aditya Darekar</b>
+          <span>IT graduate and tech enthusiast. I write about Apple tech and how I use it to lead a healthier, happier, more productive life. 2.8K readers on Medium.</span>
+        </div>
+        <a class="pill" href="https://adityadarekar.medium.com" target="_blank" rel="noopener">More stories on Medium <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M2 8h12M9 3l5 5-5 5"/></svg></a>
       </div>
     </div>
   </section>
@@ -272,7 +320,7 @@
 <footer>
   <div class="wrap">
     <p>iPhone Duo Case Studio is an unofficial concept page for exploring the official iPhone Duo cases. It is not affiliated with or endorsed by Apple. Product photography and specifications are from the Apple Store and <a href="https://www.apple.com/newsroom/2026/09/apple-unveils-iphone-duo/" target="_blank" rel="noopener">Apple Newsroom</a>, and remain © Apple Inc. Apple, iPhone and MagSafe are trademarks of Apple Inc.</p>
-    <p>Your name stays in this browser and is only drawn onto the card you download.</p>
+    <p>Built by <a href="https://adityadarekar.medium.com" target="_blank" rel="noopener">Aditya Darekar</a>. Your configuration is remembered in this browser only — nothing is sent anywhere.</p>
   </div>
 </footer>
 
@@ -333,14 +381,14 @@
     }
   };
 
-  var DEFAULT = {finish:'star-white', style:'none', color:'none', view:'hero', name:''};
+  var DEFAULT = {finish:'star-white', style:'none', color:'none', view:'hero'};
   var state = JSON.parse(JSON.stringify(DEFAULT));
-  try { var saved = JSON.parse(localStorage.getItem('duo-studio-v5') || 'null'); if (saved && STYLES[saved.style]) state = Object.assign({}, DEFAULT, saved); } catch(e){}
+  try { var saved = JSON.parse(localStorage.getItem('duo-studio-v6') || 'null'); if (saved && STYLES[saved.style]) state = Object.assign({}, DEFAULT, saved); } catch(e){}
 
   var $ = function(id){ return document.getElementById(id); };
   var frame = $('frame'), frameTag = $('frameTag'), thumbs = $('thumbs'), styleChoices = $('styleChoices');
   var swatches = $('swatches'), duoSwatches = $('duoSwatches'), views = $('views');
-  var caseFold = $('caseFold'), caseFoldLabel = $('caseFoldLabel'), nameInput = $('nameInput');
+  var caseFold = $('caseFold'), caseFoldLabel = $('caseFoldLabel');
   var statusEl = $('status'), downloadBtn = $('downloadBtn');
   var canvas = $('cardCanvas'), ctx = canvas.getContext('2d');
   var imgCache = {};
@@ -372,8 +420,7 @@
   function preload(style, color, finishId){
     viewList(style, color, finishId).forEach(function(v){ load(src(key(style, color, finishId, v))); });
   }
-  function cleanName(){ return (state.name || '').replace(/\s+/g,' ').trim(); }
-  function headline(){ var n = cleanName(); return n ? n + "'s" : "I’m getting"; }
+  var HEADLINE = 'I’m getting';
   function productLine(){ return 'iPhone Duo in ' + finish().name; }
 
   /* ---------- stage ---------- */
@@ -457,10 +504,7 @@
     $('sumFeatures').innerHTML = cur.s.features.map(function(f){ return '<li>'+f+'</li>'; }).join('');
     $('sumShown').textContent = none ? 'Apple Store photography of iPhone Duo in ' + cur.f.name + '.' : 'Part number ' + cur.c.sku + ', shown on iPhone Duo in ' + cur.f.name + '.';
     $('buyLink').href = none ? cur.s.buy : cur.c.buy;
-    $('nameEcho').textContent = headline();
-    $('nameHint').textContent = cleanName() || 'Your name';
-    $('productHint').textContent = productLine();
-    $('cardTitle').textContent = headline() + ' ' + productLine();
+    $('cardTitle').textContent = HEADLINE + ' ' + productLine();
     $('shareX').href = 'https://twitter.com/intent/tweet?text=' + encodeURIComponent(POST_TEXT) + (SITE_URL ? '&url=' + encodeURIComponent(SITE_URL) : '');
     $('shareThreads').href = 'https://www.threads.net/intent/post?text=' + encodeURIComponent(POST_TEXT + (SITE_URL ? ' ' + SITE_URL : ''));
   }
@@ -485,7 +529,7 @@
   function tile(img, k, x, y, w, h, pad){ ctx.fillStyle = '#fff'; roundRect(x,y,w,h,R); ctx.fill(); fitDraw(img, k, x, y, w, h, pad); }
   // the showiest angle leads the card; the rest fill the tiles around it
   var HERO_ORDER = ['hero','open','stand','back','front','closedback','display','camera'];
-  var drawToken = 0;
+  var drawToken = 0, cardBlob = null, cardBlobToken = -1;
   function drawCard(){
     var cur = current(); var token = ++drawToken;
     var base = hexToRgb(state.style === 'none' ? cur.f.hex : cur.c.hex);
@@ -524,7 +568,7 @@
       var font = '-apple-system, BlinkMacSystemFont, "SF Pro Display", "Helvetica Neue", Helvetica, Arial, sans-serif';
       ctx.textAlign = 'center'; ctx.textBaseline = 'alphabetic';
       ctx.fillStyle = '#1d1d1f'; ctx.font = '500 58px ' + font;
-      ctx.fillText(headline(), W/2, hy + 116);
+      ctx.fillText(HEADLINE, W/2, hy + 116);
       ctx.fillStyle = rgbStr(accent); ctx.font = '700 104px ' + font;
       var title = productLine();
       while (ctx.measureText(title).width > hw - 120 && parseInt(ctx.font) > 52) { ctx.font = '700 ' + (parseInt(ctx.font) - 6) + 'px ' + font; }
@@ -534,6 +578,9 @@
       ctx.font = '500 26px ' + font; ctx.textAlign = 'left';
       ctx.fillText('iPhone Duo · ' + cur.f.name, PAD + 6, H - 26);
       ctx.textAlign = 'right'; ctx.fillText('iPhone Duo Studio', W - PAD - 6, H - 26);
+      // bake the PNG now, so a click can hand it over without waiting
+      cardBlob = null;
+      canvas.toBlob(function(blob){ if (token === drawToken) { cardBlob = blob; cardBlobToken = token; } }, 'image/png');
     }).catch(function(){});
   }
 
@@ -541,21 +588,18 @@
     normalize();
     preload(state.style, state.color, state.finish);
     renderControls(); renderFrame(); drawCard();
-    try { localStorage.setItem('duo-studio-v5', JSON.stringify(state)); } catch(e){}
+    try { localStorage.setItem('duo-studio-v6', JSON.stringify(state)); } catch(e){}
   }
 
   caseFold.addEventListener('click', function(){ if (caseFold.dataset.target) { state.view = caseFold.dataset.target; update(); } });
   frame.addEventListener('click', function(e){ if (caseFold.hidden || caseFold.contains(e.target)) return; caseFold.click(); });
   $('resetBtn').addEventListener('click', function(){ state = JSON.parse(JSON.stringify(DEFAULT)); setStatus(''); update(); });
-  var nameTimer;
-  nameInput.addEventListener('input', function(){ state.name = nameInput.value; clearTimeout(nameTimer); nameTimer = setTimeout(update, 120); });
 
   /* ---------- download ---------- */
   function setStatus(msg, kind){ statusEl.textContent = msg || ''; statusEl.className = 'status' + (kind ? ' ' + kind : ''); }
   function fileName(){
-    var cur = current(); var n = cleanName().toLowerCase().replace(/[^a-z0-9]+/g,'-').replace(/^-|-$/g,'');
-    var what = 'iphone-duo-' + cur.f.id + (state.style === 'none' ? '' : '-' + state.style + '-' + cur.c.name.toLowerCase().replace(/\s+/g,'-'));
-    return (n ? n + '-' : '') + what + '.png';
+    var cur = current();
+    return 'iphone-duo-' + cur.f.id + (state.style === 'none' ? '' : '-' + state.style + '-' + cur.c.name.toLowerCase().replace(/\s+/g,'-')) + '.png';
   }
   var downloadsNS = null, downloadsReady = false;
   if (window.claude && typeof window.claude.use === 'function') {
@@ -564,7 +608,7 @@
 
   function saveCard(cb){
     var name = fileName();
-    canvas.toBlob(function(blob){
+    var handle = function(blob){
       if (!blob) return cb(false, 'render');
       $('fileLine').textContent = 'PNG · 1536 × 2048 · ' + (blob.size/1024/1024).toFixed(1) + ' MB';
       var fallback = function(){
@@ -581,7 +625,10 @@
         });
       };
       if (downloadsReady) go(); else setTimeout(go, 800);
-    }, 'image/png');
+    };
+    // synchronous when the card is already baked — keeps the browser's click gesture alive
+    if (cardBlob && cardBlobToken === drawToken) handle(cardBlob);
+    else canvas.toBlob(handle, 'image/png');
   }
   downloadBtn.addEventListener('click', function(){
     downloadBtn.disabled = true; setStatus('Preparing your card…');
@@ -622,21 +669,29 @@
       else { setStatus('Your browser wouldn’t hand over the image. Download the card, then attach it to your post.', 'err'); shareCard.hidden = true; }
     }).then(function(){ shareCard.disabled = false; });
   });
-  // X and Threads take text only, so save the image on the way out
-  function saveThenPost(e, label){
-    if (e.currentTarget.dataset.ready) { delete e.currentTarget.dataset.ready; return; }
-    e.preventDefault();
-    var href = e.currentTarget.href, el = e.currentTarget;
-    setStatus('Saving your card for ' + label + '…');
-    saveCard(function(ok){
-      setStatus(ok ? 'Card saved — attach it to the ' + label + ' post that just opened.' : 'Couldn’t save the card. Download it, then attach it to your post.', ok ? 'ok' : 'err');
-      el.dataset.ready = '1'; window.open(href, '_blank', 'noopener');
+  // X and Threads take text only. The link opens the post itself (so the browser keeps the
+  // user gesture and never blocks it); the card is saved alongside, in the same click.
+  var PASTE_KEY = /Mac|iPhone|iPad/.test(navigator.platform || '') ? '\u2318V' : 'Ctrl+V';
+  // Copy the PNG to the clipboard so it can be pasted straight into the composer.
+  // Must run inside the click, and only works over HTTPS.
+  function copyCard(){
+    if (!(navigator.clipboard && window.ClipboardItem && cardBlob && cardBlobToken === drawToken)) return Promise.reject();
+    return navigator.clipboard.write([new ClipboardItem({'image/png': cardBlob})]);
+  }
+  function saveThenPost(label){
+    setStatus('Opening ' + label + ' and saving your card…');
+    var copied = false;
+    copyCard().then(function(){ copied = true; }, function(){}).then(function(){
+      saveCard(function(ok, info){
+        if (copied) setStatus('Card copied — press ' + PASTE_KEY + ' in the ' + label + ' post to attach it.' + (ok ? ' It’s also saved as ' + info + '.' : ''), 'ok');
+        else if (ok) setStatus('Card saved as ' + info + ' — attach it to the ' + label + ' post.', 'ok');
+        else setStatus('Couldn’t save the card automatically. Use Download card, then attach it to your ' + label + ' post.', 'err');
+      });
     });
   }
-  $('shareX').addEventListener('click', function(e){ saveThenPost(e, 'X'); });
-  $('shareThreads').addEventListener('click', function(e){ saveThenPost(e, 'Threads'); });
+  $('shareX').addEventListener('click', function(){ saveThenPost('X'); });
+  $('shareThreads').addEventListener('click', function(){ saveThenPost('Threads'); });
 
-  if (nameInput.value !== state.name) nameInput.value = state.name;
   update();
   setTimeout(function(){
     Object.keys(STYLES).forEach(function(k){
